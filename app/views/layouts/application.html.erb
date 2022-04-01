@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FacebookClone</title>
+    <title>Facelook</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
+
+  <script type="text/javascript">
+    window.xImg = "<%= image_url('facebookx.png') %>";
+    window.githubImage = "<%= image_url('github.svg') %>";
+    window.linkedInImage = "<%= image_url('linkedin.svg') %>";
+    window.facebookLogo = "<%= image_url('facebooklogo.svg') %>";
+    window.homeImage = "<%= image_url('home.svg') %>";
+    window.dropdown = "<%= image_url('dropdown.png') %>";
+  </script>
 
   <body>
     <%= yield %>

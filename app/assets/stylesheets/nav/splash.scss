@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Klavika';
+    src: url('klavika-bold.otf');
+}
+
+html {
+    background-color: rgba(240,242,245,255)
+}
+
+.welcome-page {
+    position: relative;
+    top: 133px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+    font-family: Klavika;
+    color: rgba(24,119,242,255);
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+
+.splash-left-intro {
+    position: relative;
+    top: -30px;
+    left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+.login-form-box {
+    background: white;
+    position: relative;
+    top: 0px;
+    right: 110px;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    height: 350px;
+    width: 400px;
+    border-radius: 8px;
+    padding: 2px;
+
+    input {
+        border: 1.5px solid rgb(220, 220, 220);
+        font-size: 18px;
+        padding-left: 15px;
+        padding-top: 12px;
+        padding-bottom: 10px;
+        width: 372px;
+        margin: 10px;
+        margin-bottom: 5px;
+        border-radius: 8px;
+    }
+
+    input::placeholder {
+        color: rgb(165, 165, 165);
+    }
+
+    input:focus {
+        outline: none !important;
+        border-color: rgba(24,119,242,255);
+    }
+
+    input:focus::placeholder {
+        color: rgba($color: #c4c4c4, $alpha: 1.0);
+    }
+
+
+    .demo-user {
+        text-align: center;
+        color: rgba(24,119,242,255);
+        padding-top: 10px;
+        padding-bottom: 17px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .border-line-input {
+        width: 94.5%;
+        border-top: 1px solid rgb(212, 212, 212);
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+
+    .signup {
+        background-color: rgba(64,180,41,255);
+        font-size: 17px;
+        text-align: center;
+        border-radius: 8px;
+        font-weight: 600;
+        color: white;
+        padding: 15px;
+        width: 200px;
+        margin: auto;
+        margin-top: 30px;
+        text-align: center;
+        cursor: pointer;
+    }
+    
+    .session-submit {
+        background-color: rgba(24,119,242,255);
+        border-radius: 8px;
+        font-size: 20px;
+        font-weight: 600;
+        color: white;
+        padding: 10px;
+        width: 372px;
+        height: 49px;
+        margin: 10px;
+        margin-top: 20px;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+    }
+
+    .session-submit:hover {
+        background-color: rgba(24, 106, 214, 255)
+    }
+}
+
+.footer {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100vw;
+    height: 370px;
+    bottom: -605px;
+    background-color: white;
+    border: 1px solid white;
+
+    .info {
+        font-size: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        background-color: transparent;
+        width: 1100px;
+        padding-left: 45px;
+        padding-right: 30px;
+    
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            column-gap: 15px;
+            color: #888888;
+            background-color: transparent;
+            margin-top: 10px;
+        }
+        
+        ul:first-child {
+            margin-top: 25px;
+            padding-bottom: 10px;
+            column-gap: 15px;
+            cursor: pointer;
+        }
+
+        li {
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        ul > p {
+            text-align: start;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            background-color: transparent;
+        }
+
+        .border-line-footer {
+            width: 90%;
+            border-top: 1.5px solid rgb(212, 212, 212);
+            position: relative;
+            padding-top: 5px;
+        }
+
+        
+    }
+}
+
+
+
