@@ -5,11 +5,11 @@ class Comment < ApplicationRecord
     foreign_key: :commenter_id,
     class_name: :User
 
-    belongs_to: :post,
+    belongs_to :post,
     foreign_key: :post_id,
     class_name: :post
     
     has_many :likes,
     as: :likeable,
-    dependent: destroy
+    dependent: :destroy
 end
