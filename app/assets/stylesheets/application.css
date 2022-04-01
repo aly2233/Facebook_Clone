@@ -14,7 +14,3 @@
  *= require_self
  */
 
- @import 'reset/reset.scss';
- @import 'nav/splash.scss';
- @import 'nav/modal.scss';
- @import 'nav/navbar.scss';
