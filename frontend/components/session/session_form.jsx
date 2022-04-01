@@ -88,8 +88,8 @@ class SessionForm extends React.Component {
             <div className="signup" onClick={() => this.props.openModal('signup')}>Create new account</div>
             </div>
         </form>
-        <div className="footer">
-          <div className="info">
+        <div className="splash-footer">
+          <div className="footer-info">
             <ul>
               <li>English (US)</li>
               <li>Español</li>

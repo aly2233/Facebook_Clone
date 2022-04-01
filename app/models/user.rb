@@ -6,6 +6,9 @@ class User < ApplicationRecord
     validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "Please enter a valid email address" } 
     validates :password, length: {minimum: 6}, allow_nil: true
 
+    has_one_attached :cover_picture
+    has_one_attached :profile_picture
+
     has_many :posts,
     foreign_key: :author_id,
     class_name: :Post

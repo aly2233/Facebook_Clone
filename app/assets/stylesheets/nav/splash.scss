@@ -123,7 +123,7 @@ html {
     }
 }
 
-.footer {
+.splash-footer {
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -134,7 +134,7 @@ html {
     background-color: white;
     border: 1px solid white;
 
-    .info {
+    .footer-info {
         font-size: 12px;
         display: flex;
         flex-direction: column;
@@ -143,6 +143,7 @@ html {
         width: 1100px;
         padding-left: 45px;
         padding-right: 30px;
+        margin-left: 420px;
     
         ul {
             display: flex;

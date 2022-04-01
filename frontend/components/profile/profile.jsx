@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileInfoContainer from './profile_info_container';
 
 
 class Profile extends React.Component{
@@ -14,7 +15,11 @@ class Profile extends React.Component{
 
     render(){
         return(
-            <div>Profile Page</div>
+            <div className='profile-page'>
+                <div className='profile-container'>
+                    <ProfileInfoContainer/>
+                </div>
+            </div>
         )
     }
 }
