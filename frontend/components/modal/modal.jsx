@@ -14,6 +14,9 @@ function Modal({ modal, closeModal }) {
         case 'signup':
             component = <SignupContainer closeModal={closeModal}/>;
             break;
+        case 'Update Info':
+            component = <SignupContainer closeModal={closeModal} id={modal.id}/>;
+            break;
         default:
             return null;
     }

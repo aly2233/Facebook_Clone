@@ -20,5 +20,14 @@
 
   <body>
     <%= yield %>
+
+  <meta property="og:title" content="Facelook" />
+     <meta property='og:image' content="<%= image_url('Facelook.PNG') %>"/>
+     <meta property="og:description"
+       content="A Facebook clone built using a Rails backend and React frontend"
+     />
+     <meta property="og:url"
+       content="https://facelook-ayueh.herokuapp.com/#/"
+  />
   </body>
 </html>
