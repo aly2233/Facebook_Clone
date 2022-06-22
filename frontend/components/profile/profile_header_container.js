@@ -16,7 +16,9 @@ const mapDispatchToProps = dispatch => {
     return({
         fetchUser:(userId) => dispatch(fetchUser(userId)),
         otherForm:(modal) => dispatch(openModal(modal)),
-        updateUser:(user) => dispatch(updateUser(user))
+        updateUser: (user) => {
+            return dispatch(updateUser(user))
+        },
     })
 }
 

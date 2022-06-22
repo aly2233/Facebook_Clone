@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+class Post < ApplicationRecord
     belongs_to :poster,
     foreign_key: :author_id,
     class_name: :User
@@ -16,6 +16,6 @@ class User < ApplicationRecord
     as: :likeable,
     dependent: :destroy
 
-    has_one_attached :photo
+    has_one_attached :post_photo
 end
 

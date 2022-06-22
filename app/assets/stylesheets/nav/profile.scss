@@ -1,0 +1,437 @@
+@font-face {
+    font-family: 'Klavika';
+    src: url('klavika-bold.otf');
+}
+
+.profile-container {
+    background-color: rgba(240,242,245,255);
+}
+
+.profile-photo-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    position: relative;
+    top: 14px;
+    
+    h2 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+        padding-top: 14px;
+    }
+
+    p {
+        text-align: center;
+        padding-top: 10px;
+    }
+}
+
+.profile-friends-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    position: relative;
+    top: 29px;
+
+    h2 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+        padding-top: 14px;
+    }
+
+    p {
+        font-weight: lighter;
+        padding-top: 14px;
+        font-size: 18px;
+        color: grey;
+    }
+}
+
+.profile-info-container {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: 365px;
+    position: relative;
+
+    background-color: white;
+
+    h2 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+        padding-top: 14px;
+    }
+
+    li {
+        padding-bottom: 25px;
+        padding-left: 10px;
+    }
+
+    p {
+        padding-bottom: 25px;
+        text-align: center;
+    }
+
+    .update-info {
+        position: relative;
+        text-align: center;
+        font-weight: 550;
+        width: 95%;
+        margin-left: 2.5%;
+        height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        border-radius: 8px;
+        background-color: rgba(228,230,235,255);
+        border: none;
+    }
+
+    .update-info:hover {
+        background-color: rgba(216,218,223,255);
+        cursor: pointer;
+    }
+}
+
+.profile-top-container {
+
+    
+        
+    .profile-header-container {
+        width: 100%;
+        background-color: white;
+        height: 625px;
+        
+        .cover-picture-container {
+            width: 100%;
+            height: 465px;
+            display: flex;
+            justify-content: center;
+            
+            img {
+                width: 68%;
+                height: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.profile-bottom-container {
+    margin-left: 17%;
+    margin-right: 17%;
+    position: relative;
+    top: 14px;
+    min-height: 100vh;
+    display: flex;
+}
+
+
+.profile-pic-and-name {
+    display: flex;
+    width: 30%;
+    z-index: 1;
+    position: absolute;
+    top: 45%;
+    left: 18%;
+}
+
+.profile-picture-container {
+    position: relative;
+    border: 1px solid #cecccc;
+    height: 182px;
+    width: 182px;
+    border-radius: 100%;
+    
+    img {
+        height: 180px;
+        width: 180px;
+        border-radius: 100%;
+        border: 4px solid white;
+    }
+}
+
+.profile-header-display-name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    right: -5%;
+    top: 80px;
+}
+
+
+.profile-border {
+    border-top: 1px solid rgb(212, 212, 212);
+    font-weight: 0;
+    position: relative;
+    bottom: 0px;
+
+}
+
+.profile-camera-icon {
+    background-image: image-url('camera_icon.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 60%;
+    left: 22%;
+    z-index: 1;
+}
+
+.profile-left-container {
+    display: flex;
+    width: 43%;
+    flex-direction: column;
+}
+
+.profile-right-container {
+    display: flex;
+    width: 57%;
+    flex-direction: column;
+    padding-left: 14px;
+}
+
+.profile-create-post {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    width: 100%;
+    height: 220px;
+    background-color: white;
+
+    h2 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 8px;
+        padding-left: 10px;
+        padding-top: 14px;
+    }
+
+    .post-body-container {
+        margin-left: 10px;
+        width: 100%;
+        padding-top: 15px;
+        
+        img {
+            border-radius: 100%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .post-body {
+            margin-left: 10px;
+            border: 0.1px solid white;
+            background-color: rgba(240,242,245,255);
+            resize: none;
+            width: 87%;
+            height: 40px;
+            border-radius: 30px;
+            margin-bottom: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: left;
+            box-sizing: border-box;
+        }
+    }
+
+    .upload-photo-container {
+        padding-top: 10px;
+        padding-left: 10px;
+        
+        .upload-photo-btn {
+            display: flex;
+            z-index: 1;
+            width: 125px;
+            height: 37px;
+            border-radius: 8px;
+            cursor: pointer;
+
+            input {
+                display: none;
+            }
+
+            .photo-icon {
+                background: image-url('photo2.png');
+                background-repeat: no-repeat;
+                background-size: auto;
+                width: 35px;
+                height: 30px;
+                margin-top: 5px;
+                margin-left: 10px;
+                position: relative;
+                cursor: pointer;
+                z-index: 1;
+            }
+
+            p {
+                margin-left: 18px;
+                margin-top: 13px;
+                font-weight: bold;
+                color: grey;
+                
+            }
+
+
+        }
+    }
+}
+
+
+.post-body::placeholder {
+    padding-top: 7px;
+    padding-left: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    text-align: left;
+}
+
+.upload-photo-btn:hover {
+    background-color: rgba(240,242,245,255);
+}
+
+.create-post-btn-container {
+    padding-top: 13px;
+
+    .create-post-btn {
+        position: relative;
+        text-align: center;
+        font-weight: 550;
+        width: 93%;
+        margin-left: 20px;
+        height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        border-radius: 8px;
+        background-color: rgba(228,230,235,255);
+        border: none;
+    }
+
+    .create-post-btn:hover {
+        background-color: rgba(216,218,223,255);
+        cursor: pointer;
+    }
+}
+
+.wallpost-index {
+    height: 800px;
+    border: 1.5px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    margin-top: 14px;
+    border-radius: 8px;
+}
+
+.upload-cover-pic-button {
+    display: none;
+}
+
+.upload-profile-pic-button {
+    display: none;
+}
+
+.birthday-icon {
+    background-image: image-url('birthday-icon.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.school-icon {
+    background-image: image-url('graduation-icon.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.hometown-icon {
+    background-image: image-url('address-icon.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.current-location-icon {
+    background-image: image-url('address-icon.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+.heart-icon {
+    background-image: image-url('heart-icon.png');
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+
+
+ul li {
+    display: flex;
+    justify-content: flex-start;
+    
+}
+
+
+.friends-display {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    text-decoration: none;
+    margin-left: 3%;
+}
+.friend-display-individual {
+    text-decoration: none;
+    height: 175px;
+    flex: 1;
+
+    img {
+        height: 135px;
+        width: 135px;
+        border-radius: 8px;
+        border: none;
+    }
+
+    .friend-display-names {
+        text-decoration: none;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: .8125rem;
+        font-weight: 600;
+        border: none;
+    }
+
+    .friend-display-names:link {
+        text-decoration: none!important;
+    }
+
+
+}
+

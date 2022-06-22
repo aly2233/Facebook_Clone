@@ -2,7 +2,7 @@ class User < ApplicationRecord
 
     attr_reader :password
 
-    validates :email, :password_digest, :birthday, :session_token, presence: true
+    validates :first_name, :last_name, :email, :password_digest, :birthday, :session_token, presence: true
     validates :email, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create, message: "Please enter a valid email address" } 
     validates :password, length: {minimum: 6}, allow_nil: true
 

@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
+    let user = this.state;
     this.props.processForm(user).then(
       (data) => {
         this.props.closeModal();
@@ -32,9 +32,10 @@ class SignupForm extends React.Component {
     this.setState({
       email: this.state.email,
       password: '',
-      firstName: this.state.first_name,
-      lastName: this.state.last_name,
+      first_name: this.state.first_name,
+      last_name: this.state.last_name,
     })
+
   }
 
   handleInput(field) {
@@ -70,25 +71,25 @@ class SignupForm extends React.Component {
                 <div className="signup-input">
                   
                   <label>
-                    <input type='text' onChange={this.handleInput("first_name")}
+                    <input type='text' onChange={this.update("first_name")}
                     value={this.state.first_name} className="first-name-input"
                     placeholder="First name"/>
                   </label>
 
                   <label>
-                    <input type='text' onChange={this.handleInput("last_name")}
+                    <input type='text' onChange={this.update("last_name")}
                     value={this.state.last_name} className="last-name-input"
                     placeholder="Last name"/>
                   </label>
 
                   <label>
-                    <input autoFocus type='text' onChange={this.handleInput("email")}
+                    <input autoFocus type='text' onChange={this.update("email")}
                     value={this.state.email} className="email-input"
                     placeholder="Email"/>
                   </label>
 
                   <label>
-                    <input type='password' onChange={this.handleInput("password")}
+                    <input type='password' onChange={this.update("password")}
                     value={this.state.password} className="password-input"
                     placeholder="New password"/>
                   </label>
@@ -96,7 +97,7 @@ class SignupForm extends React.Component {
                   <div className="birthday-text">Birthday</div>
 
                   <label>
-                    <input type='date' onChange={this.handleInput("birthday")}
+                    <input type='date' onChange={this.update("birthday")}
                     value={this.state.birthday} className="birthday-input"
                     placeholder="Birthday"/>
                   </label>

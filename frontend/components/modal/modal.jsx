@@ -1,5 +1,7 @@
 import React from 'react';
 import SignupContainer from '../session/signup_container';
+import PostCreateContainer from '../post/post_create_container';
+import PostEditContainer from '../post/post_edit_container';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux'
 
@@ -13,6 +15,12 @@ function Modal({ modal, closeModal }) {
     switch (modal) {
         case 'signup':
             component = <SignupContainer closeModal={closeModal}/>;
+            break;
+        case 'Create Post':
+            component = <PostCreateContainer/>;
+            break;
+        case 'Update Post':
+            component = <PostEditContainer closeModal={closeModal} id={modal.id}/>;
             break;
         case 'Update Info':
             component = <SignupContainer closeModal={closeModal} id={modal.id}/>;

@@ -11,25 +11,11 @@ class ProfileHeader extends React.Component {
 
         this.displayProfileUpdate = this.displayProfileUpdate.bind(this);
         this.displayCoverUpdate = this.displayCoverUpdate.bind(this);
-        this.displayInfoUpdate = this.displayInfoUpdate.bind(this);
         this.handlePicture = this.handlePicture.bind(this);
-        this.clickPicture = this.handlePicture.bind(this);
+        this.clickPicture = this.clickPicture.bind(this);
         this.openModal = this.openModal.bind(this);
     }
 
-    // handlePicture(e) {
-    //     let file = e.target.files[0];
-    //     const reader = new FileReader();
-    //     reader.onloadend = () => {
-    //         this.setState({ imageUrl: reader.result, imageFile: file });
-    //     }
-
-    //     if (file) {
-    //     reader.readAsDataURL(file);
-    //     } else {
-    //         this.setState({ imageUrl: "", imageFile: null });
-    //     }
-    // }
 
     handlePicture(field) {
         return(e) => {
@@ -40,27 +26,14 @@ class ProfileHeader extends React.Component {
                 this.setState({imageFile: file, imageUrl: null})
                 const formData = new FormData();
                 if (this.state.imageFile) {
-                    formData.append(`user[cover_picture]`, file)
-                    this.props.updateUser(this.props.currentUser.id, formData)
+                    formData.append(`user[${field}]`, file)
+                    this.props.updateUser(formData)
                 }
             }
-
             if (file) {
                 fileReader.readAsDataURL(file);
             }
     
-        }
-    }
-
-    handleSubmit(field) {
-        return(e) => {
-        e.preventDefault();
-        const formData = new FormData();
-        if (this.state.imageFile) {
-            const formData = new FormData();
-            formData.append(`user[${field}]`, file)
-            this.props.updateUser(formData)
-        }
         }
     }
 
@@ -69,29 +42,21 @@ class ProfileHeader extends React.Component {
     clickPicture(field) {
         return(e) => {
             if (field === 'upload-cover-picture') {
-                $('.upload-cover-picture').click();
+                $('.upload-cover-pic-button').click();
             } else {
-                $('.upload-profile-btn').click();
+                $('.upload-profile-pic-button').click();
             }
         }
     }
 
-    displayInfoUpdate() {
-        if (this.props.currentUser.id === this.props.user.id) {
-            return(
-                <button className="update-info" onClick={this.openModal}>Update Info</button>
-            )
-        } else {
-            null
-        }
-    }
 
     displayCoverUpdate() {
         if (this.props.currentUser.id === this.props.user.id) {
             return (
-                <div className='cover-picture-display-container'>
-                    <div className='cover-picture-display' onClick={this.clickPicture('upload-cover-picture')}>Add Cover Photo
-                        <input className='upload-cover-pic' type="file" onChange={this.handlePicture('cover_picture')}/>
+                <div className='cover-picture-button-container'>
+                    <div className='cover-camera-icon' onClick={this.clickPicture('upload-cover-button')}></div>
+                    <div className='cover-picture-button' onClick={this.clickPicture('upload-cover-button')}>
+                        <input className='upload-cover-pic-button' type="file" onChange={this.handlePicture('cover_picture')}/>
                     </div>
                 </div>
             )
@@ -103,9 +68,10 @@ class ProfileHeader extends React.Component {
     displayProfileUpdate() {
         if (this.props.currentUser.id === this.props.user.id) {
             return (
-                <div className='profile-picture-display-container'>
-                    <div className='profile-picture-display' onClick={this.clickPicture('upload-profile-picture')}>Add Profile Photo
-                        <input className='upload-profile-pic' type="file" onChange={this.handlePicture('profile_picture')}/>
+                <div className='profile-picture-button-container'>
+                    <div className='profile-camera-icon' onClick={this.clickPicture('upload-profile-button')}></div>
+                    <div className='profile-picture-button' onClick={this.clickPicture('upload-profile-button')}>
+                        <input className='upload-profile-pic-button' type="file" onChange={this.handlePicture('profile_picture')}/>
                     </div>
                 </div>
             )
@@ -117,28 +83,34 @@ class ProfileHeader extends React.Component {
     openModal() {
         this.props.otherForm('Update Info', this.props.currentUser.id)
     }
-
+    
     render() {
-
+        if (!this.props.user) return <div>Loading</div>
         const coverPictureDisplay = (this.props.user.coverPicture) ? 
             <img src={`${this.props.user.coverPicture}`} /> :
-            <img src={`${this.props.user.coverPicture}`} />
+            <img src='https://i.stack.imgur.com/l60Hf.png' />
 
         const profilePictureDisplay = (this.props.user.profilePicture) ? 
             <img src={`${this.props.user.profilePicture}`} /> :
-            <img src={`${this.props.user.profilePicture}`} />
-            
+            <img src='https://i.stack.imgur.com/l60Hf.png' />
+        
+        
         return(
-            <div className="profile-header-container">
-                Profile Header
-                <div className="cover-picture-container">{coverPictureDisplay}</div>
-                {this.displayCoverUpdate()}
-                <div className="profile-picture-container">{profilePictureDisplay}</div>
-                {this.displayProfileUpdate()}
-                <div className="profile-header-display-name">{this.props.user.first_name} {this.props.user.last_name}</div>
-            </div>
+            <>
+                <div className="profile-header-container">
+                    <div className="cover-picture-container">{coverPictureDisplay}</div>
+                    {this.displayCoverUpdate()}
+                    <div className="profile-pic-and-name">
+                        <div className="profile-picture-container">{profilePictureDisplay}</div>
+                        <div className="profile-header-display-name">{this.props.user.first_name} {this.props.user.last_name}</div>
+                    </div>
+                    {this.displayProfileUpdate()}
+                </div>
+                <div className="profile-border"/>
+            </>
         )
     }
 }
+
 
 export default ProfileHeader

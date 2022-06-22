@@ -1,6 +1,8 @@
 import React from 'react';
 import ProfileInfoContainer from './profile_info_container';
 import ProfileHeaderContainer from './profile_header_container';
+import PostCreateContainer from '../post/post_create_container';
+import ProfilePostIndexContainer from '../post/profile_post_index_container';
 
 
 class Profile extends React.Component{
@@ -9,17 +11,28 @@ class Profile extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchUsers();
+        this.props.fetchAllFriends();
         window.scrollTo(0, 0);
     }
 
     render(){
+        let users = Object.values(this.props.users)
         return(
             <div className='profile-page'>
-                <div className='profile-container'>
+                <div className='profile-top-container'>
                     <ProfileHeaderContainer/>
-                    <ProfileInfoContainer/>
+                </div>
+                <div className="profile-bottom-container">
+                    <div className="profile-left-container">
+                        {users.length > 1 && <ProfileInfoContainer/>}
+                    </div>
+                    <div className="profile-right-container">
+                        <div className="profile-create-post">
+                            <PostCreateContainer/>
+                        </div>
+                        <ProfilePostIndexContainer/>
+                    </div>
                 </div>
             </div>
         )

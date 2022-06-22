@@ -1,16 +1,15 @@
 .nav-bar {
+    position: sticky;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 55px;
     z-index: 10;
     background-color: white;
-    position: fixed;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
 
     .nav-bar-left {
         display: flex;
-        width: 50%;
         justify-content: flex-start;
         margin-left: 10px;
 
@@ -18,6 +17,7 @@
             padding-left: 20px;
             padding-top: 4px;
         }
+
     }
 
     .logo {
@@ -29,7 +29,6 @@
     .nav-bar-center {
         display: flex;
         justify-content: center;
-        margin-right: 645px;
         margin-top: 3px;
         border-radius: 8px;
         width: 100px;
@@ -74,7 +73,40 @@
         p {
             font-family: Arial, Helvetica, sans-serif;
             padding-right: 20px;
-            margin-top: 20px;
+            margin-top: 14px;
+            color: rgba(27,116,230,255);
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .navbar-pic {
+            border-radius: 100%;
+            height: 30px;
+            width: 30px;
+            margin-right: 10px;
+            margin-top: 8px;
+        }
+
+        .nav-profile-and-name {
+            cursor: pointer;
+            width: 100px;
+            display: flex;
+            border: 1px solid white;
+            background-color: rgba(231,243,255,255);
+            border-radius: 15px;
+            margin-right: 10px;
+            height: 45px;
+            margin-top: 5px;
+
+        }
+
+        .nav-profile-and-name:hover {
+            cursor: pointer;
+            background-color: rgba(156,193,238,255);
+        }
+
+        .nav-profile-photo {
+            padding-left: 6px;
         }
         }
     }

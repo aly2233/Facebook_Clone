@@ -1,12 +1,12 @@
-json.friend do
+json.friend_to_user do
     json.set! @friend.id do
         json.partial! 'friend', friend: @friend
     end
 end
 
-json.user do
-    json.set! @user.id do 
-        json.extract! @user, :id, :user_id, :friend_id
+json.user_to_friend do
+    json.set! @user_to_friend.id do 
+        json.extract! @user_to_friend, :id, :user_id, :friend_id
     end
 end
 
