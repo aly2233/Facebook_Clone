@@ -406,10 +406,10 @@ ul li {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     padding-top: 10px;
     text-decoration: none;
-    margin-left: 3%;
+    margin-left: 7%;
 
     .friend-image-container {
         width: 135px;
@@ -421,7 +421,7 @@ ul li {
     height: auto;
     width: 135px;
     padding-bottom: 10px;
-    margin-right: 3%;
+    margin-right: auto;
 
     img {
         height: 135px;

@@ -18,7 +18,6 @@ class ProfilePostIndex extends React.Component {
     }
 
     render() {
-        if (!this.props.user) return <div>Loading</div>
         const postIndexList = this.props.posts.reverse().map( post => {
             return <PostIndexUtilContainer key={post.id} post={post} />
         })

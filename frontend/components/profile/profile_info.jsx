@@ -4,9 +4,6 @@ import FriendsInfo from "./friends_info";
 class ProfileInfo extends React.Component {
     constructor(props){
         super(props)
-        
-        
-
         this.displayInfoUpdate = this.displayInfoUpdate.bind(this);
         this.openModal = this.openModal.bind(this);
     }
@@ -61,6 +58,7 @@ class ProfileInfo extends React.Component {
 
 
     render() {
+
         let day = this.props.user.birthday.slice(8, 10);
         let year = this.props.user.birthday.slice(0, 4);
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -77,7 +75,7 @@ class ProfileInfo extends React.Component {
             null
         }
 
-        
+
         return(
             <>
                 <div className="profile-info-container">

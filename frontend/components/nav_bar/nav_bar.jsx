@@ -31,15 +31,24 @@ class NavBar extends React.Component {
 
 
         const dropDownMenu = this.state.clicked === "true" ? (
-            <div className="dropdown-menu-open" onClick={this.handleClick}>▼
+            <div className="dropdown-menu-open" onClick={this.handleClick}> <img src={window.downArrow}/>
                 <div className="dropdown-content">
-                    <p>{`${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`}</p>
-                    <p>See your profile</p>
-                    <button className="logout-button" onClick={() => this.handleLogout()}>Log Out</button>
+                    <div className="dropdown-pic-name"><Link style={{textDecoration: 'none'}} to={`/profile/${this.props.currentUser.id}`}>
+                        <img src ={this.props.currentUser.profilePicture}/></Link>
+                        <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.currentUser.id}`}><p>{`${this.props.currentUser.first_name} ${this.props.currentUser.last_name}`}</p></Link>
+                    </div>
+                    <p className="see-profile">See your profile</p>
+                    <div className="dropdown-border"/>
+                    <div className="logout-container" onClick={() => this.handleLogout()}>
+                        <div className="logout-image-container">
+                            <img className="logout-image" src={window.logout}/>
+                        </div>
+                        <div className="logout-button" >Log Out</div>
+                    </div>
                 </div>
             </div>
         ) : (
-            <div className="dropdown-menu-closed" onClick={this.handleClick}>▼</div>
+            <div className="dropdown-menu-closed"> <img src={window.downArrow} onClick={this.handleClick}/></div>
         )
        
         return(
@@ -57,9 +66,9 @@ class NavBar extends React.Component {
                     </Link>
                 </div>
                 <div className="nav-bar-right">
-                    <div className='nav-profile-and-name'>
-                        <div className='nav-profile-photo'><Link to={`/profile/${this.props.currentUser.id}`}><img className='navbar-pic' src={this.props.currentUser.profilePicture} /></Link></div>
-                        <p>{`${this.props.currentUser.first_name}`}</p>
+                    <div className='nav-profile-and-name'> 
+                        <div className='nav-profile-photo'><Link style={{textDecoration: 'none'}} to={`/profile/${this.props.currentUser.id}`}><img className='navbar-pic' src={this.props.currentUser.profilePicture} /></Link></div>
+                        <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.currentUser.id}`}><p>{`${this.props.currentUser.first_name}`}</p></Link>
                     </div>
                     {dropDownMenu}
                 </div>
