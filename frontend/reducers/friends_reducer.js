@@ -22,7 +22,7 @@
 // export default friendsReducer;
 
 import { RECEIVE_FRIEND, REMOVE_FRIEND } from '../actions/friend_actions';
-import { RECEIVE_USER } from '../actions/session_actions'
+import { RECEIVE_USER } from '../actions/user_actions'
 import { RECEIVE_ALL_FRIENDS } from '../actions/friend_actions';
 
 const friendsReducer = (state = {}, action) => {

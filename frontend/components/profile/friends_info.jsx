@@ -6,7 +6,6 @@ class FriendsInfo extends React.Component{
         super(props)
     }
 
-
     render() {
         
         let friends = Object.values(this.props.friends)
@@ -15,7 +14,7 @@ class FriendsInfo extends React.Component{
 
 
         friends.forEach((friend, i) => {
-            if (friend.user_id == parseInt(this.props.currentUser.id)) {
+            if (friend.user_id == parseInt(this.props.user.id)) {
                 userFriends.push(users[friend.friend_id]);
             };
         });
@@ -26,26 +25,18 @@ class FriendsInfo extends React.Component{
             displayFriends = null;
         } else {
             displayFriends = friends.map((friend, i) => {
-                if (friend.user_id === this.props.currentUser.id) {
+                if (friend.user_id === this.props.user.id) {
                     return (
                     <div className="friend-display-individual" key={friend.id}><Link to={`/profile/${friend.friend_id}`}>
                         <div className='friend-image-container'><img className='friend-tile-photo' src={users[friend.friend_id].profilePicture}/></div>
                         <div className='friend-display-names'>{users[friend.friend_id].first_name} {users[friend.friend_id].last_name}</div>
                     </Link></div>
                     )
+                   
                 }
             })
         
         }
-
-
-
-
-       
-        
-
-    
-
 
         return (
             <div className='profile-friends-container'>
@@ -54,7 +45,7 @@ class FriendsInfo extends React.Component{
                     <p className='friend-count'>{userFriends.length} Friend(s)</p>
                 </h2>
                 <div className='friends-display'>
-                    {displayFriends}
+                    {this.props.user && displayFriends}
                 </div>
             </div>
         )

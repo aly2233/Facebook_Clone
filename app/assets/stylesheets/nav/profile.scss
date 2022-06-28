@@ -65,7 +65,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    height: 365px;
+    height: auto;
     position: relative;
 
     background-color: white;
@@ -100,6 +100,7 @@
         border-radius: 8px;
         background-color: rgba(228,230,235,255);
         border: none;
+        margin-bottom: 10px;
     }
 
     .update-info:hover {
@@ -124,7 +125,7 @@
             justify-content: center;
             
             img {
-                width: 68%;
+                width: 75%;
                 height: 100%;
                 border-radius: 8px;
             }
@@ -146,9 +147,9 @@
     display: flex;
     width: 30%;
     z-index: 1;
-    position: absolute;
-    top: 45%;
-    left: 18%;
+    position: relative;
+    left: 15%;
+    bottom: 8%;
 }
 
 .profile-picture-container {
@@ -212,7 +213,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     width: 100%;
-    height: 220px;
+    height: 213px;
     background-color: white;
 
     h2 {
@@ -224,9 +225,10 @@
     }
 
     .post-body-container {
-        margin-left: 10px;
         width: 100%;
         padding-top: 15px;
+        display: flex;
+        justify-content: center;
         
         img {
             border-radius: 100%;
@@ -239,7 +241,7 @@
             border: 0.1px solid white;
             background-color: rgba(240,242,245,255);
             resize: none;
-            width: 87%;
+            width: 85%;
             height: 40px;
             border-radius: 30px;
             margin-bottom: 2px;
@@ -307,13 +309,15 @@
 
 .create-post-btn-container {
     padding-top: 13px;
+    display: flex;
+    justify-content: center;
 
     .create-post-btn {
         position: relative;
         text-align: center;
         font-weight: 550;
-        width: 93%;
-        margin-left: 20px;
+        width: 95%;
+        // margin-left: 20px;
         height: 40px;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 15px;
@@ -406,11 +410,18 @@ ul li {
     padding-top: 10px;
     text-decoration: none;
     margin-left: 3%;
+
+    .friend-image-container {
+        width: 135px;
+        height: auto;
+    }
 }
 .friend-display-individual {
     text-decoration: none;
-    height: 175px;
-    flex: 1;
+    height: auto;
+    width: 135px;
+    padding-bottom: 10px;
+    margin-right: 3%;
 
     img {
         height: 135px;

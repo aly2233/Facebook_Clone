@@ -5,9 +5,10 @@ class ProfileEditForm extends React.Component {
         super(props),
         this.state = {
             bio: this.props.user.bio,
-            city: this.props.user.city,
+            relationship: this.props.user.relationship,
+            hometown: this.props.user.hometown,
             school: this.props.user.school,
-            work: this.props.user.work
+            current_town: this.props.user.current_town,
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,26 +26,31 @@ class ProfileEditForm extends React.Component {
         const formData = new FormData();
         formData.id = this.props.user.id;
         formData.append('user[bio]', this.state.bio);
-        formData.append('user[city]', this.state.city);
+        formData.append('user[current_town]', this.state.current_town);
         formData.append('user[school]', this.state.school);
-        formData.append('user[work]', this.state.work);
+        formData.append('user[hometown]', this.state.hometown);
+        formData.append('user[relationship]', this.state.relationship);
 
-        this.props.updateUserInfo(formData).then(this.props.closeModal)
+        
+
+        this.props.updateUser(formData).then(this.props.closeModal)
     }
 
     render() {
         return (
             <form className='update-info-form' onSubmit={this.handleSubmit}>
                 <span onClick={this.props.closeModal} className="close-x update-form">&times;</span>
-                <h3>Edit Profile </h3>
+                <h3>Edit Details </h3>
                 <label>About Me</label>
-                <textarea  onChange={this.update('bio')} value={this.state.bio}></textarea>
-                <label>Current City</label>
-                <input type="text" onChange={this.update('city')} value={this.state.city}/>
+                <textarea onChange={this.update('bio')} value={this.state.bio}></textarea>
                 <label>Education</label>
                 <input type="text" onChange={this.update('school')} value={this.state.school}/>
-                <label>Profession</label>
-                <input type="text" onChange={this.update('work')} value={this.state.work}/>
+                <label>Current City</label>
+                <input type="text" onChange={this.update('current_town')} value={this.state.current_town}/>
+                <label>Hometown</label>
+                <input type="text" onChange={this.update('hometown')} value={this.state.hometown}/>
+                <label>Relationship</label>
+                <input type="text" onChange={this.update('relationship')} value={this.state.relationship}/>
                 <button>Update Info</button>
             </form>
         );

@@ -17,26 +17,34 @@ html {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+.welcome-page-top {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 77%;
+    justify-content: space-between;
+
+    
+}
 .logo {
     font-family: Klavika;
     color: rgba(24,119,242,255);
     font-size: 65px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .splash-left-intro {
-    position: relative;
-    top: -30px;
-    left: 100px;
+    margin-top: 80px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 28px;
 }
 
 .login-form-box {
     background: white;
-    position: relative;
-    top: 0px;
-    right: 110px;
+    // position: relative;
+    // top: 0px;
+    // right: 110px;
     border: 1.5px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
     height: 350px;
@@ -127,10 +135,10 @@ html {
     position: absolute;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     width: 100vw;
-    height: 370px;
-    bottom: -605px;
+    height: auto;
+    bottom: -450px;
     background-color: white;
     border: 1px solid white;
 
@@ -143,7 +151,9 @@ html {
         width: 1100px;
         padding-left: 45px;
         padding-right: 30px;
-        margin-left: 420px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        
     
         ul {
             display: flex;

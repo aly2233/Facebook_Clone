@@ -56,7 +56,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="welcome-page">
-
+        <div className="welcome-page-top">
           <div className="splash-left-intro">
             <p className="logo">facelook</p>
             <p>Connect with friends and the world</p>
@@ -88,6 +88,7 @@ class SessionForm extends React.Component {
             <div className="signup" onClick={() => this.props.openModal('signup')}>Create new account</div>
             </div>
         </form>
+        </div>
         <div className="splash-footer">
           <div className="footer-info">
             <ul>

@@ -127,4 +127,62 @@ input{
     margin-bottom: -18px;
 }
 
+.update-info-form {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 5px;
+    width: 435px;
+    height: auto;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    h3 {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    textarea {
+        border-radius: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        resize: none;
+    }
+
+    input {
+        margin-top: 0px;
+        border-radius: 8px;
+    }
+
+    label:not(:first-child) {
+        padding-top: 15px;
+    }
+
+    .close-x {
+        cursor: pointer;
+    }
+
+    button {
+        text-align: center;
+        font-weight: 550;
+        width: 100%;
+        height: 40px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        border-radius: 8px;
+        background-color: rgba(228,230,235,255);
+        border: none;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+
+    button:hover {
+        background-color: rgba(216,218,223,255);
+        cursor: pointer;
+    }
+
+}
 
