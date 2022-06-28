@@ -27,6 +27,10 @@ user3 = User.create!(email: 'mango@gmail.com', password: 'barkwoof', first_name:
 user3.cover_picture.attach(io: File.open("app/assets/images/mango_cover.jpg"), filename: "mango_cover.jpg")
 user3.profile_picture.attach(io: File.open("app/assets/images/mango_profile.jpg"), filename: "mango_profile.jpg")
 
+user4 = User.create!(email: 'boba@gmail.com', password: 'barkwoof', first_name: 'Boba', last_name: 'Yueh', birthday: '2021-01-16', bio: "Woof Woof", hometown: "Somewhere, Kentucky", current_town: "New York, New York", relationship: "Woof", school: "Bark University")
+user4.cover_picture.attach(io: File.open("app/assets/images/boba-cover-pic.jpg"), filename: "boba-profile-pic.jpg")
+user4.profile_picture.attach(io: File.open("app/assets/images/boba-profile-pic.jpg"), filename: "boba-profile-pic.jpg")
+
 post1 = Post.create!(
     body: "I just had the BIGGEST pizza and ate it all!",
     author_id: demoUser.id,
@@ -61,4 +65,34 @@ friend3 = Friend.create!(
 friend3_back = Friend.create!(
     user_id: user3.id,
     friend_id: demoUser.id
+)
+
+friend4 = Friend.create!(
+    user_id: demoUser.id,
+    friend_id: user4.id
+)
+
+friend4_back = Friend.create!(
+    user_id: user4.id,
+    friend_id: demoUser.id
+)
+
+friend5 = Friend.create!(
+    user_id: user4.id,
+    friend_id: user1.id
+)
+
+friend5_back = Friend.create!(
+    user_id: user1.id,
+    friend_id: user4.id
+)
+
+friend5 = Friend.create!(
+    user_id: user4.id,
+    friend_id: user3.id
+)
+
+friend5_back = Friend.create!(
+    user_id: user3.id,
+    friend_id: user4.id
 )

@@ -58,7 +58,6 @@ class ProfileInfo extends React.Component {
 
 
     render() {
-
         let day = this.props.user.birthday.slice(8, 10);
         let year = this.props.user.birthday.slice(0, 4);
         let month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
