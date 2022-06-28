@@ -19,6 +19,13 @@ class FriendsInfo extends React.Component{
             };
         });
 
+        let friendCount;
+        if (userFriends.length === 1) {
+            friendCount = <p className='friend-count'>{userFriends.length} Friend</p>
+        } else {
+            friendCount = <p className='friend-count'>{userFriends.length} Friends</p>
+        }
+
         
         let displayFriends;
         if (userFriends.length === 0) {
@@ -42,7 +49,7 @@ class FriendsInfo extends React.Component{
             <div className='profile-friends-container'>
                 <h2>Friends 
                     <div className='profile-friends-icon'></div>
-                    <p className='friend-count'>{userFriends.length} Friend(s)</p>
+                    {friendCount}
                 </h2>
                 <div className='friends-display'>
                     {this.props.user && displayFriends}
