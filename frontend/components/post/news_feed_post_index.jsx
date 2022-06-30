@@ -4,9 +4,6 @@ import PostIndexUtilContainer from './post_index_util_container';
 class NewsFeedPostIndex extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            posts: this.props.posts
-        };
     }
 
     componentDidMount() {
@@ -38,9 +35,9 @@ class NewsFeedPostIndex extends React.Component {
             });
 
 
+
             return (
                 <ul className='wallpost-index'>
-                    <li>Hello</li>
                     {postIndexList}
                 </ul>
             );

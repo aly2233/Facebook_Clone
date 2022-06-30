@@ -27,11 +27,14 @@ class CommentForm extends React.Component {
     render() {
         return(
             <div className="comment-form-container">
+                <img src={this.props.currentUser.profilePicture}/>
                 <form className="comment-form" onSubmit={this.handleSubmit}>
                     <input type="text"
+                    autoComplete='off'
                     value={this.state.body}
                     placeholder="Write a comment..."
                     onChange={this.update('body')}
+                    id = {`comment-form-input-id-${this.props.post.id}`}
                     />
                 </form>
             </div>

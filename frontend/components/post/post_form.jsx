@@ -30,8 +30,8 @@ class PostForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[body]', this.state.body)
-        formData.append('post[profile_id]', this.props.postProfileId)
-        formData.append('post[post_id]', this.props.currentUser.id)
+        formData.append('post[profile_id]', this.props.postCreateId)
+        formData.append('post[author_id]', this.props.currentUser.id)
 
         if (this.state.photoFile) {
             formData.append('post[post_photo]', this.state.photoFile)
@@ -44,6 +44,8 @@ class PostForm extends React.Component {
             photoFile: null,
             photoUrl: null,
         })
+
+
     }
 
     update(field) {
@@ -87,6 +89,7 @@ class PostForm extends React.Component {
                             <img className='post-form-photo' src={this.props.currentUser.profilePicture}/>
                             <textarea className='post-body' onChange={this.update('body')} value={this.state.body} placeholder="What's on your mind?"></textarea>
                         </div>
+                        <div className='create-post-border-top'/>
                         {showPreview}
                         <div className='upload-photo-container'>
                             <div className='upload-photo-btn' onClick={this.clickFile('post-photo-btn')}>
@@ -95,6 +98,7 @@ class PostForm extends React.Component {
                                 <input className='post-photo-btn' type="file" onChange={this.handleFile}/>
                             </div>
                         </div>
+                        <div className='create-post-border-bottom'/>
                         <div className='create-post-btn-container'>
 
                         {postButton}

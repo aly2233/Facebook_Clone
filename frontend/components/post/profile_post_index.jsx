@@ -2,6 +2,7 @@
 import React from 'react';
 import PostIndexUtilContainer from './post_index_util_container';
 
+
 class ProfilePostIndex extends React.Component {
     constructor(props) {
         super(props);
@@ -17,17 +18,34 @@ class ProfilePostIndex extends React.Component {
         }
     }
 
+
     render() {
-        const postIndexList = this.props.posts.reverse().map( post => {
-            return <PostIndexUtilContainer key={post.id} post={post} />
-        })
+        if (this.props.posts.length === 0) {
+            return null;
+        } else {
+            let allPosts = [];
+                this.props.posts.forEach( post => {
+                    if (post.author_id === this.props.user.id || post.profile_id === this.props.user.id) {
+                        allPosts.push(post) ;
+                    };
+                });
+     
 
-        return(
-            <ul className='wallpost-index'>
-                {postIndexList}
-            </ul>
-        );
-    }
-}
 
+    
+            const postIndexList = allPosts.reverse().map(post => {
+                return <PostIndexUtilContainer key={post.id} post={post} />
+            });
+
+
+
+
+            return (
+                <ul className='wallpost-index'>
+                    {postIndexList}
+                </ul>
+            );
+        };
+    };
+};
 export default ProfilePostIndex

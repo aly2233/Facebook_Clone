@@ -1,6 +1,10 @@
 class Api::PostsController < ApplicationController
     def index
-        @posts = Post.all
+        if params[:wallId] == 'all'
+            @posts = Post.includes(:comments, :likes).all
+        else
+            @posts = Post.all
+        end
         render :index
     end
 

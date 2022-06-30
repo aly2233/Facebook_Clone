@@ -27,7 +27,6 @@ html {
     width: 100%;
     justify-content: space-between;
     max-width: 1000px;
-    // min-height: calc(100vh - 170px);
 
     
 }
@@ -47,12 +46,9 @@ html {
 
 .login-form-box {
     background: white;
-    // position: relative;
-    // top: 0px;
-    // right: 110px;
     border: 1.5px solid white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    height: 350px;
+    height: 330px;
     width: 400px;
     border-radius: 8px;
     padding: 2px;

@@ -44,13 +44,13 @@ class PostIndexUtil extends React.Component{
     
     displayDropdownMenu() {
         if (this.props.currentUser.id === this.props.post.author_id || this.props.currentUser.id === this.props.post.profile_id) {
-            if (this.props.currentUser.id === this.props.post.post_author_id) {
+            if (this.props.currentUser.id === this.props.post.author_id) {
                 return (
                     <>
                         <button className='post-menu-btn-icon'></button>
                         <ul className='post-menu-dropdown-list'>
-                            <li><button className='post-menu-dropdown-btn' onClick={() => this.props.otherForm('Update Post', this.props.post.id)}>Edit</button></li>
-                            <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete</button></li>
+                            <li><button className='post-menu-dropdown-btn' onClick={() => this.props.otherForm('Update Post', this.props.post.id)}>Edit Post</button></li>
+                            <li><button className='post-menu-dropdown-btn' onClick={this.destroyPost}>Delete Post</button></li>
                         </ul>
                     </>
                 )    
@@ -88,17 +88,19 @@ class PostIndexUtil extends React.Component{
         }
         const postAuthor = this.props.users[this.props.post.author_id]
         return (
-            <div className='post-author-container'>
-                <Link to={`/users/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePicture} /></Link>
-                <div className='post-author-time-container'>
-                    {postAuthor.id === this.props.post.profile_user_id ? <div className='post-author'><Link to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link></div>
-                        : <div className='post-author'>
-                            <Link to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link> ▸ <Link to={`/users/${this.props.post.profile_user_id}`}>
-                                {this.props.users[this.props.post.profile_id].first_name} {this.props.users[this.props.post.profile_user_id].last_name}</Link></div>}
-                    <div className='post-time'>{month} {day}, {year} at {time}</div>
+            <>
+                <div className='post-author-container'>
+                    <Link style={{textDecoration: 'none'}} to={`/profile/${postAuthor.id}`}><img className='post-author-pic' src={postAuthor.profilePicture} /></Link>
+                    <div className='post-author-time-container'>
+                        {postAuthor.id === this.props.post.profile_id ? <div className='post-author'><Link style={{textDecoration: 'none'}} to={`/profile/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link></div>
+                            : <div className='post-author'>
+                                <Link style={{textDecoration: 'none'}} to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link> ▸ <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.post.profile_user_id}`}>
+                                    {this.props.users[this.props.post.profile_id].first_name} {this.props.users[this.props.post.profile_id].last_name}</Link></div>}
+                        <div className='post-time'>{month} {day}, {year} at {time}</div>
+                    </div>
                 </div>
-                    {this.displayDropdownMenu()}
-            </div>
+                
+            </>
         )
     }
 
@@ -127,18 +129,22 @@ class PostIndexUtil extends React.Component{
         }
 
         return (
-            <li>Hello
-                {this.displayPostAuthor()}
+            <li>
+                <div className="post-author-dropdown">
+                    {this.displayPostAuthor()}
+                    {this.displayDropdownMenu()}
+                </div>
                 
                 <div className='wallpost-body'>{this.props.post.body}</div>
                 <img className='wallpost-photos' src={this.props.post.postPhoto} />
                 
-                {/* {displayLikes} */}
-
+                {displayLikes}
+                <div className="like-comment-top-border"/>
                 <div className='like-comment-container'>
-                    <div onClick={this.toggleLike} className={boldLikes}><i className="far fa-thumbs-up likebtn"></i>Like</div>
-                    <div onClick={this.focusComment}><i className="far fa-comment-alt"></i>Comment</div>
+                    <div onClick={this.toggleLike} className={boldLikes}><img className="like-button" src={window.likeButton}></img><p>Like</p></div>
+                    <div onClick={this.focusComment}><img className="comment-button" src={window.commentButton}></img><p>Comment</p></div>
                 </div>
+                <div className="like-comment-bottom-border"/>
 
                 <CommentIndexContainer post={this.props.post}/>
                 <CommentFormContainer post={this.props.post}/>

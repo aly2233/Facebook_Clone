@@ -8,22 +8,6 @@ class ProfileInfo extends React.Component {
         this.openModal = this.openModal.bind(this);
     }
 
-    // componentDidMount(){
-        // this.props.fetchUser(this.props.match.params.userId).then(
-        //     () => {
-            //     console.log(this.props.user)
-            //     return this.setState({
-            //         birthday: this.props.user.birthday,
-            //         bio: this.props.user.bio,
-            //         relationship: this.props.user.relationship,
-            //         hometown: this.props.user.hometown,
-            //         school: this.props.user.school,
-            //         current_town: this.props.user.current_town,
-            //     })
-            // }
-        // )
-    // }
-
     componentDidUpdate(previousProps){
         if (this.props.match.params.userId !== previousProps.match.params.userId) {
         this.props.fetchUser(this.props.match.params.userId).then(

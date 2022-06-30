@@ -35,7 +35,12 @@ class Profile extends React.Component{
                         <div className="profile-create-post">
                             <PostCreateContainer/>
                         </div>
-                        <ProfilePostIndexContainer/>
+                        <div className="profile-all-post-container">
+                            <div className='profile-post-intro-container'>
+                                <h3>Posts</h3>
+                             </div>
+                            {users.length > 1 && <ProfilePostIndexContainer/>}
+                        </div>
                     </div>
                 </div>
             </div>
