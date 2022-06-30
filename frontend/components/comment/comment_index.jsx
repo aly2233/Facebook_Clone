@@ -8,15 +8,17 @@ class CommentIndex extends React.Component {
 
     render() {
         const CommentIndexList = this.props.comments.map(comment => {
-            return <CommentIndexItemContainer key={comment.id}
+            return <CommentIndexItemContainer key={comment}
                 comment={comment}
                 post={this.props.post}
             />
         })
 
+
         return (
+
             <ul className='comment-index'>
-                {CommentIndexList}
+                {this.props.comments && CommentIndexList}
             </ul>
         );
     }

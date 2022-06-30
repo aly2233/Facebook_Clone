@@ -1,5 +1,5 @@
 class Like < ApplicationRecord 
-    validates :author_id, presence: true
+    validates :liker_id, presence: true
     
     belongs_to :liker,
     foreign_key: :liker_id,

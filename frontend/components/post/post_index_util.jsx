@@ -24,7 +24,7 @@ class PostIndexUtil extends React.Component{
         };
         let toggle = false;
         this.props.likes.forEach( like => {
-            if (like.author_id === this.props.currentUser.id) {
+            if (like.liker_id === this.props.currentUser.id) {
                 newLike = like;
                 toggle = true;
             }
@@ -94,7 +94,7 @@ class PostIndexUtil extends React.Component{
                     <div className='post-author-time-container'>
                         {postAuthor.id === this.props.post.profile_id ? <div className='post-author'><Link style={{textDecoration: 'none'}} to={`/profile/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link></div>
                             : <div className='post-author'>
-                                <Link style={{textDecoration: 'none'}} to={`/users/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link> ▸ <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.post.profile_user_id}`}>
+                                <Link style={{textDecoration: 'none'}} to={`/profile/${postAuthor.id}`}>{postAuthor.first_name} {postAuthor.last_name}</Link> ▸ <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.post.profile_id}`}>
                                     {this.props.users[this.props.post.profile_id].first_name} {this.props.users[this.props.post.profile_id].last_name}</Link></div>}
                         <div className='post-time'>{month} {day}, {year} at {time}</div>
                     </div>
@@ -112,7 +112,7 @@ class PostIndexUtil extends React.Component{
     render() {
         let liked = false;
         this.props.likes.forEach(like => {
-            if (like.author_id === this.props.currentUser.id) {
+            if (like.liker_id === this.props.currentUser.id) {
                 liked = true;
             }
         })
@@ -146,7 +146,7 @@ class PostIndexUtil extends React.Component{
                 </div>
                 <div className="like-comment-bottom-border"/>
 
-                <CommentIndexContainer post={this.props.post}/>
+                {/* <CommentIndexContainer post={this.props.post}/> */}
                 <CommentFormContainer post={this.props.post}/>
             </li>
            

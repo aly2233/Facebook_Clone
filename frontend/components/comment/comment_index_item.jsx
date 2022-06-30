@@ -46,8 +46,8 @@ class CommentIndexItem extends React.Component {
     }
 
     displayDropdownMenu() {
-        // if (this.props.currentUser.id === this.props.comment.comment_author_id || this.props.currentUser.id === this.props.postProfile.id) {
-            if (this.props.currentUser.id === this.props.comment.comment_author_id) {
+        if (this.props.currentUser.id === this.props.comment.commenter_id || this.props.currentUser.id === this.props.postProfile.id) {
+            if (this.props.currentUser.id === this.props.comment.commenter_id) {
                 return (
                     <>
                         <button className='comment-menu-btn-icon'></button>
@@ -57,7 +57,7 @@ class CommentIndexItem extends React.Component {
                         </ul>
                     </>
                 )
-            } else if (this.props.currentUser.id === this.props.post.post_author_id){
+            } else if (this.props.currentUser.id === this.props.post.author_id){
                 return (
                     <>
                         <button className='comment-menu-btn-icon'></button>
@@ -66,8 +66,10 @@ class CommentIndexItem extends React.Component {
                         </ul>
                     </>
                 )
+            } else {
+                return <div>Loading</div>
             }
-        // }
+        }
     }
 
     changeComment(e) {
@@ -133,13 +135,13 @@ class CommentIndexItem extends React.Component {
 
         return (
             <li>
-                <Link to={`/users/${this.props.comment.comment_author_id}`}>
-                    <img className='comment-author-pic' src={this.props.users[this.props.comment.comment_author_id].profilePicture} />
+                <Link to={`/profile/${this.props.comment.commenter_id}`}>
+                    <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
                 </Link>
                 <div className='comment-index-item-container'>
                     <div className='comment-name'>
-                        <Link to={`/users/${this.props.comment.comment_author_id}`}>
-                            {this.props.users[this.props.comment.comment_author_id].first_name} {this.props.users[this.props.comment.comment_author_id].last_name}
+                        <Link to={`/users/${this.props.comment.commenter_id}`}>
+                            {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
                         </Link>
                     </div>
 

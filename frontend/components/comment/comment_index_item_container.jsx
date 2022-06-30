@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
         users: state.entities.users,
         postProfile: state.entities.users[postProfileId],
         comment: ownProps.comment,
-        likes: getLikes(state, ownProps.comment)
+        // likes: getLikes(state, ownProps.comment)
     })
 }
 
