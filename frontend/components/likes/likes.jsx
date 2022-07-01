@@ -20,7 +20,7 @@ class Likes extends React.Component {
                 text = <div className='like-amount'>You</div>;
             } else if (amount === 1 && liked === false) {
                 text = <div className='like-amount'>1 other</div>;
-            } else if (amount === 1 && liked === true) {
+            } else if (amount === 2 && liked === true) {
                 text = <div className='like-amount'>You and {this.props.likes.length-1} other</div>;
             } else if (amount > 1 && liked === true) {
                 text = <div className='like-amount'>You and {this.props.likes.length-1} others</div>;
