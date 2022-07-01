@@ -7,7 +7,7 @@ class Likes extends React.Component {
 
     render() {
         let text;
-        let likeBtn = <div className='like-icon-blue'></div>
+        let likeBtn = <img className='like-amount-icon' src={window.blueLikeButton}/>
 
         const amount = this.props.likes.length;
         const liked = this.props.liked
@@ -31,7 +31,7 @@ class Likes extends React.Component {
                 likeBtn = null;
             } else {
                 text = <div className='like-amount-comment'>{amount}</div>;
-                likeBtn = <div className='like-icon-blue-comment'></div>
+                likeBtn = <img className='like-amount-icon' src={window.blueLikeButton}/>
             }
 
         }
@@ -39,11 +39,11 @@ class Likes extends React.Component {
         return(
             <>
                 {this.props.type === 'Post' ? <div className='display-like-count'>
-                    {text}
                     {likeBtn}
+                    {text}
                     </div> : <div className='display-like-count-comment'>
-                        {text}
                         {likeBtn}
+                        {text}
                         </div>
                 }            
             </>
