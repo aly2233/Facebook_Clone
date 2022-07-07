@@ -3,6 +3,9 @@ class Api::CommentsController < ApplicationController
 
     def index
         @comments = Comments.all
+        if params[:postId]
+            @comments = @comments.where(post_id: params[:postId])
+        end
         render :index
     end
 

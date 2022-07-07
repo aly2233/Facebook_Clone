@@ -21,7 +21,6 @@ class NewsFeed extends React.Component {
                     <NewsFeedIndexContainer />
 
                     <NewsFeedBirthday />
-
                 </div>
             </div>
         );

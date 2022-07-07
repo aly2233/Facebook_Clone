@@ -146,7 +146,7 @@ class PostIndexUtil extends React.Component{
                 </div>
                 <div className="like-comment-bottom-border"/>
 
-                {/* <CommentIndexContainer post={this.props.post}/> */}
+                <CommentIndexContainer post={this.props.post}/>
                 <CommentFormContainer post={this.props.post}/>
             </li>
            

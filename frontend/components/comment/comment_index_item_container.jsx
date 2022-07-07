@@ -4,18 +4,17 @@ import { deleteComment, updateComment } from '../../actions/comment_actions';
 import { fetchPost } from '../../actions/post_actions';
 import CommentIndexItem from './comment_index_item';
 import { createLike, deleteLike } from '../../actions/like_actions';
-import { getLikes } from '../../reducers/select_reducer';
+import { getLikesComment } from '../../reducers/select_reducer';
 
 
 const mapStateToProps = (state, ownProps) => {
     const postProfileId = ownProps.match.params.userId || state.session.id
-
     return ({
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,
         postProfile: state.entities.users[postProfileId],
         comment: ownProps.comment,
-        // likes: getLikes(state, ownProps.comment)
+        likes: getLikesComment(state, ownProps.comment)
     })
 }
 

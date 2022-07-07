@@ -27,7 +27,7 @@ class CommentIndexItem extends React.Component {
         };
         let toggle = false;
         this.props.likes.forEach(like => {
-            if (like.author_id === this.props.currentUser.id) {
+            if (like.liker_id === this.props.currentUser.id) {
                 newLike = like;
                 toggle = true;
             }
@@ -117,7 +117,7 @@ class CommentIndexItem extends React.Component {
     
         let liked = false;
         this.props.likes.forEach(like => {
-            if (like.author_id === this.props.currentUser.id) {
+            if (like.liker_id === this.props.currentUser.id) {
                 liked = true;
             }
         })
@@ -135,12 +135,12 @@ class CommentIndexItem extends React.Component {
 
         return (
             <li>
-                <Link to={`/profile/${this.props.comment.commenter_id}`}>
+                <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
                     <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
                 </Link>
                 <div className='comment-index-item-container'>
                     <div className='comment-name'>
-                        <Link to={`/users/${this.props.comment.commenter_id}`}>
+                        <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
                             {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
                         </Link>
                     </div>

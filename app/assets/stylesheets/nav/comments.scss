@@ -1,0 +1,85 @@
+.comment-index {
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+
+
+    li {
+        height: auto;
+
+        img {
+            border-radius: 100%;
+            height: 31px;
+            width: 31px;
+        }
+
+        .comment-index-item-container {
+            width: auto;
+            background-color: rgba(240,242,245,255);
+            border-radius: 8px;
+            height: auto;
+            font-size: 0.9375rem;
+            font-weight: 400;
+
+            .comment-name a {
+                font-size: 0.8125rem;
+                font-weight: 600;
+                color: black;
+            }
+        }
+    }
+}
+
+.comment-menu-btn-icon {
+    background: image-url('options-icon.png');
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    opacity: 55%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    z-index: 1;
+    right: 10px;
+    top: 10px;
+    overflow: visible;
+
+}
+
+.post-menu-dropdown-list {
+    position: relative;
+    width: 30%;
+    right: 0%;
+    top: 25px;
+    border: 1px solid #cecccc;
+    cursor: pointer;
+    display: none;
+    font-size: 13px;
+    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    height: 35px;
+    z-index: 1000;
+}
+
+.comment-menu-dropdown-list li {
+    display: flex;
+    align-items: flex-start;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.comment-menu-dropdown-list li:hover {
+    background: #4267b2;
+    color: white;
+    border-radius: none;
+}
+
+.comment-menu-btn-icon:focus + .comment-menu-dropdown-list, .comment-menu-dropdown-list:hover {
+    display: block;
+}

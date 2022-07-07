@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
     }
 
 
+
     const postProfileId = ownProps.match.params.userId || state.session.id
 
 
