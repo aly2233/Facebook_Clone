@@ -227,6 +227,7 @@
 
 .comment-body {
     font-weight: 400;
+    padding-top: 4px;
 }
 
 .like-comment-btn:hover {
@@ -251,7 +252,7 @@
     .comment-form {
         width: 100%;
             input {
-            margin-left: 10px;
+            margin-left: 15px;
             border: 0.1px solid white;
             background-color: rgba(240,242,245,255);
             resize: none;

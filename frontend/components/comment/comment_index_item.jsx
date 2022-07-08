@@ -151,7 +151,7 @@ class CommentIndexItem extends React.Component {
                 </div>
                 
                 {displayLikes}
-                
+                <div className="break"></div>
                 <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
             </li>
         );

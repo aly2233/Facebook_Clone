@@ -17,8 +17,12 @@
         flex-wrap: wrap;
         margin-left: 14px;
 
-        .like-comment-btn {
+        .break {
+            height: 0;
             flex: 100%;
+        }
+
+        .like-comment-btn {
             margin-left: 51px;
             font-size: 12px;
             font-weight: bold;
