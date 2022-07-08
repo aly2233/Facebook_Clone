@@ -169,14 +169,14 @@
     height: 20px;
     background-size: 100%;
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
     opacity: 55%;
     cursor: pointer;
     outline: none;
     border: none;
     z-index: 1;
-    // right: 10px;
-    // top: 10px;
+    right: 10px;
+    top: 10px;
     overflow: visible;
 }
 

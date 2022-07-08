@@ -9,6 +9,7 @@ class CommentForm extends React.Component {
             commenter_id: this.props.currentUser.id
         }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.update = this.update.bind(this);
     }
 
     update(field) {
@@ -19,10 +20,14 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
         let comment = Object.assign({}, this.state);
         comment['post_id'] = this.props.post.id;
         this.props.createComment(comment);
-        this.setState({body: ''})
+
+        this.setState({
+            body: '',
+        })
     }
 
     render() {

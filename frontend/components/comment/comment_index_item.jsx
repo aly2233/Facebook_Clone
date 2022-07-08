@@ -90,7 +90,6 @@ class CommentIndexItem extends React.Component {
         this.props.updateComment(formData)
         this.setState({
             edit: false,
-            
         })
     }
 
