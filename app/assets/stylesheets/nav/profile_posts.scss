@@ -225,6 +225,13 @@
     
 }
 
+.comment-body {
+    font-weight: 400;
+}
+
+.like-comment-btn:hover {
+    cursor: pointer;
+}
 
 .comment-form-container {
     width: 100%;
@@ -233,6 +240,7 @@
     align-items: center;
     margin-left: 3%;
     height: 60px;
+    margin-top: 5px;
     
     img {
         border-radius: 100%;

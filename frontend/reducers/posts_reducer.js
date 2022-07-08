@@ -15,6 +15,16 @@ const postsReducer = (state = {}, action) => {
         case REMOVE_POST:
             delete nextState[action.postId];
             return nextState;
+        case REMOVE_COMMENT:
+            let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => id !== action.comment.id)
+            nextState[action.comment.post_id].commentIds = newCommentIds;
+            return nextState;
+        case RECEIVE_COMMENT:
+            let post = nextState[action.comment.post_id];
+            if (!post.commentIds.includes(action.comment.id)) {
+                post.commentIds.push(action.comment.id)
+            };
+            return nextState;
         case RECEIVE_LIKE:
             if (action.like.likeable_type === 'Post') {
                 nextState[action.like.likeable_id].likeIds.push(action.like.id)
@@ -25,16 +35,6 @@ const postsReducer = (state = {}, action) => {
                 let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
                 nextState[action.like.likeable_id].likeIds = newLikeIds;
             };
-        case RECEIVE_COMMENT:
-            let post = nextState[action.comment.post_id];
-            if (!post.commentIds.includes(action.comment.id)) {
-                post.commentIds.push(action.comment.id)
-            };
-            return nextState;
-        case REMOVE_COMMENT:
-            let newCommentIds = nextState[action.comment.post_id].commentIds.filter(id => id !== action.comment.id)
-            nextState[action.comment.post_id].commentIds = newCommentIds;
-            return nextState;
         default:
             return state;
     }

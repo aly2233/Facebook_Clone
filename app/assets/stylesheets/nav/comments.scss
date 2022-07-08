@@ -5,9 +5,25 @@
     flex-direction: column;
     padding-top: 10px;
 
+    li:not(:first-child) {
+        padding-top: 10px;
+    }
+
 
     li {
         height: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 14px;
+
+        .like-comment-btn {
+            flex: 100%;
+            margin-left: 51px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
 
         img {
             border-radius: 100%;
@@ -17,11 +33,18 @@
 
         .comment-index-item-container {
             width: auto;
+            max-width: 85%;
             background-color: rgba(240,242,245,255);
-            border-radius: 8px;
+            border-radius: 18px;
             height: auto;
             font-size: 0.9375rem;
             font-weight: 400;
+            position: relative;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 12px;
+            padding-right: 12px;
+            margin-left: 7px;
 
             .comment-name a {
                 font-size: 0.8125rem;
@@ -38,23 +61,22 @@
     height: 20px;
     background-size: 100%;
     background-repeat: no-repeat;
-    position: relative;
+    position: absolute;
+    right: -25px;
+    top: 35%;
     opacity: 55%;
     cursor: pointer;
     outline: none;
     border: none;
-    z-index: 1;
-    right: 10px;
-    top: 10px;
-    overflow: visible;
+    z-index: 2;
 
 }
 
 .comment-menu-dropdown-list {
-    position: relative;
-    width: 30%;
-    right: 0%;
-    top: 25px;
+    position: absolute;
+    width: 200px;
+    right: -125px;
+    top: 38px;
     border: 1px solid #cecccc;
     cursor: pointer;
     display: none;
@@ -64,14 +86,16 @@
     border-radius: 8px;
     height: 35px;
     z-index: 1000;
+    justify-content: center;
 }
 
 .comment-menu-dropdown-list li {
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
     border: none;
     width: 100%;
     border-radius: 8px;
+    margin: 0;
 }
 
 .comment-menu-dropdown-list li:hover {
@@ -82,4 +106,10 @@
 
 .comment-menu-btn-icon:focus + .comment-menu-dropdown-list, .comment-menu-dropdown-list:hover {
     display: block;
+}
+
+.comment-pic-name-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
