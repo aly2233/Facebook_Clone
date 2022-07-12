@@ -134,12 +134,14 @@
 }
 
 .profile-bottom-container {
-    margin-left: 17%;
-    margin-right: 17%;
+    // margin-left: 17%;
+    // margin-right: 17%;
     position: relative;
     top: 14px;
     min-height: 100vh;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -196,15 +198,20 @@
 
 .profile-left-container {
     display: flex;
-    width: 43%;
+    width: 30%;
     flex-direction: column;
+    min-width: 324px;
+    padding-bottom: 43px;
+    
 }
 
 .profile-right-container {
     display: flex;
-    width: 57%;
+    width: 40%;
     flex-direction: column;
     padding-left: 14px;
+    min-width: 430px;
+
 }
 
 .profile-create-post {
@@ -432,6 +439,7 @@ ul li {
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
+    gap: 3px;
     padding-top: 10px;
     text-decoration: none;
     padding-left: 6px;

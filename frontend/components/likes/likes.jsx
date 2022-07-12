@@ -31,6 +31,10 @@ class Likes extends React.Component {
             if (amount === 0) {
                 text = null;
                 likeBtn = null;
+            } else if (amount === 1) {
+                likeBtn = <div className='like-icon-border'>
+                    <img className='like-amount-icon' src={window.blueLikeButton}/>
+                </div>
             } else {
                 text = <div className='like-amount-comment'>{amount}</div>;
                 likeBtn = <img className='like-amount-icon' src={window.blueLikeButton}/>
@@ -44,9 +48,11 @@ class Likes extends React.Component {
                     {likeBtn}
                     {text}
                     </div> : <div className='display-like-count-comment'>
-                        {likeBtn}
-                        {text}
+                        <div className="display-likes-wrapper">
+                            {likeBtn}
+                            {text}
                         </div>
+                    </div>
                 }            
             </>
         );

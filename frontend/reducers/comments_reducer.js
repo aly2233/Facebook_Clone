@@ -15,7 +15,7 @@ const commentsReducer = (state = {}, action) => {
             return nextState;
         case REMOVE_LIKE:
             if (action.like.likeable_type === 'Comment') {
-                let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id !== action.like.id);
+                let newLikeIds = nextState[action.like.likeable_id].likeIds.filter(id => id == action.like.id);
                 nextState[action.like.likeable_id].likeIds = newLikeIds;
             }
             return nextState;
@@ -23,7 +23,7 @@ const commentsReducer = (state = {}, action) => {
             nextState[action.comment.id] = action.comment
             return nextState;
         case REMOVE_COMMENT:
-            delete nextState[action.comment.id]
+            delete nextState[action.commentId.id]
             return nextState;
         default:
             return state;

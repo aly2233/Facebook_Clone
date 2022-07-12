@@ -7,7 +7,8 @@ class CommentIndexItem extends React.Component {
         super(props)
         this.state = {
             edit: false,
-            body: this.props.comment.body
+            body: this.props.comment.body,
+            clicked: 'false'
         }
         this.destroyComment = this.destroyComment.bind(this);
         this.displayDropdownMenu = this.displayDropdownMenu.bind(this);
@@ -16,6 +17,7 @@ class CommentIndexItem extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCancel = this.handleCancel.bind(this);
         this.toggleLike = this.toggleLike.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
     toggleLike(e) {
@@ -42,22 +44,42 @@ class CommentIndexItem extends React.Component {
 
     destroyComment(e) {
         e.preventDefault();
-        this.props.deleteComment(this.props.comment)
+        this.handleClick();
+        this.props.deleteComment(this.props.comment);
+    }
+
+    handleClick() {
+        if (this.state.clicked === "true") {
+            this.setState({ clicked: "false"})
+        } else {
+            this.setState({ clicked: "true"});
+        }
     }
 
     displayDropdownMenu() {
         if (this.props.currentUser.id === this.props.comment.commenter_id || this.props.currentUser.id === this.props.postProfile.id) {
             if (this.props.currentUser.id === this.props.comment.commenter_id) {
-                return (
-                    <>
-                        <button className='comment-menu-btn-icon'></button>
-                        <ul className='comment-menu-dropdown-list'>
-                            <li><button className='comment-menu-dropdown-btn' onClick={this.changeComment}>Edit</button></li>
-                            <li><button className='comment-menu-dropdown-btn' onClick={this.destroyComment}>Delete</button></li>
-                        </ul>
-                    </>
-                )
+                if (this.state.clicked === "true") {
+                    return (
+                        <>  
+                            <div className='comment-menu-btn-icon-border' onClick={this.handleClick}>
+                                <button className='comment-menu-btn-icon'></button>
+                            </div>
+                            <ul className='comment-menu-dropdown-list'>
+                                <li><button className='comment-menu-dropdown-btn' onClick={this.changeComment}>Edit Comment</button></li>
+                                <li><button className='comment-menu-dropdown-btn' onClick={this.destroyComment}>Delete Comment</button></li>
+                            </ul>
+                        </>
+                    )
+                } else {
+                    return (
+                        <div className='comment-menu-btn-icon-border' onClick={this.handleClick}>
+                            <button className='comment-menu-btn-icon'></button>
+                        </div>
+                    )
+                }
             } else if (this.props.currentUser.id === this.props.post.author_id){
+                if (this.state.clicked === "true") {
                 return (
                     <>
                         <button className='comment-menu-btn-icon'></button>
@@ -66,12 +88,20 @@ class CommentIndexItem extends React.Component {
                         </ul>
                     </>
                 )
+                } else {
+                    return (
+                        <div className='comment-menu-btn-icon-border' onClick={this.handleClick}>
+                            <button className='comment-menu-btn-icon'></button>
+                        </div>
+                    )
+                }
             }
         }
     }
 
     changeComment(e) {
         this.setState({edit: true})
+        this.handleClick();
     }
 
     update(field) {
@@ -110,7 +140,14 @@ class CommentIndexItem extends React.Component {
                         this.handleSubmit();}
                     }}
                 />
-            </> : commentDisplay = <div className='comment-body'>{this.state.body}</div>
+            </> : commentDisplay = <>
+            <div className='comment-name'>
+                            <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
+                                {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
+                            </Link>
+                        </div>
+                        <div className='comment-body'>{this.state.body}</div>
+                        </>
     
         let liked = false;
         this.props.likes.forEach(like => {
@@ -137,20 +174,20 @@ class CommentIndexItem extends React.Component {
                         <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
                     </Link>
                     <div className='comment-index-item-container'>
-                        <div className='comment-name'>
+                        {/* <div className='comment-name'>
                             <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
                                 {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
                             </Link>
-                        </div>
+                        </div> */}
 
                         {commentDisplay}
                         {this.displayDropdownMenu()}
+                        {displayLikes}
 
                         {this.state.edit === true ? <div className='cancel-edit-comment' onClick={this.handleCancel}>Cancel</div> : null}
                     </div>
                 </div>
                 
-                {displayLikes}
                 <div className="break"></div>
                 <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
             </li>
