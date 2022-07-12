@@ -330,6 +330,10 @@
     margin-right: 2%;
 }
 
+.post-body:focus {
+    outline: none;
+}
+
 
 .post-body::placeholder {
 
