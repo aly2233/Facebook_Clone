@@ -7,11 +7,24 @@ class NavBar extends React.Component {
         super(props);
 
         this.state = {
-            clicked: 'false'
+            clicked: 'false',
+            search: '',
+            searchResults: []
         }
 
         this.handleLogout = this.handleLogout.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.displaySearch = this.displaySearch.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps.location.pathname !== this.props.location.pathname) {
+            this.setState({
+                search: "",
+                searchResults: [],
+            })
+        }
     }
 
     handleLogout() {
@@ -25,6 +38,38 @@ class NavBar extends React.Component {
         } else {
             this.setState({ clicked: "true"});
         }
+    }
+
+    displaySearch() {
+        if (this.state.searchResults.length === 0) {
+            return null;
+        } else {
+            return <ul className='search-results-container'>
+                {this.state.searchResults.map (user => {
+                return (
+                    <Link style={{textDecoration: 'none'}}to={`/profile/${user.id}`} key={user.id}>
+                        <img src={user.profilePicture}/>
+                        <li>{user.first_name} {user.last_name}</li>
+                    </Link>
+                )
+            })}</ul>
+        }
+    }
+
+    handleSearch(e) {
+        this.setState({search: e.currentTarget.value})
+        let searchResults = [];
+
+        if (e.currentTarget.value) {
+            this.props.users.forEach (user => {
+                let name = user.first_name + user.last_name;
+                if (name && name.toLowerCase().includes(e.currentTarget.value.toLowerCase())) {
+                    searchResults.push(user);
+                };
+            });
+        };
+
+        this.setState({searchResults: searchResults});
     }
 
     render() {
@@ -59,6 +104,13 @@ class NavBar extends React.Component {
                     </Link>
                     <a href="https://github.com/aly2233" target="_blank" rel="noopener noreferrer"><img src={window.githubImage}/></a>
                     <a href="https://www.linkedin.com/in/alan-yueh-01428a146/" target="_blank" rel="noopener noreferrer"><img src={window.linkedInImage}/></a>
+                    <form className='search-bar-form'>
+                        <input className='search-bar' type="text"
+                            onChange={this.handleSearch}
+                            value={this.state.search}
+                            placeholder='Search Facelook' />
+                        {this.displaySearch()}
+                    </form>
                 </div>
                 <div className="nav-bar-center">
                     <div className='home-image-container'>

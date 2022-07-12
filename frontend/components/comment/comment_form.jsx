@@ -19,6 +19,7 @@ class CommentForm extends React.Component {
     }
 
     handleSubmit(e) {
+        debugger
         e.preventDefault();
         
         let comment = Object.assign({}, this.state);

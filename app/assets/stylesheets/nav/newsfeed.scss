@@ -96,102 +96,103 @@
     .newsfeed-main {
         width: 38%;
     }
-}
 
-.post-form-container {
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1.5px solid white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-    background-color: white;
-    margin-top: 10px;
-
-    h2 {
-        font-weight: bold;
-        font-size: 20px;
-        margin-bottom: 8px;
-        padding-left: 10px;
-        padding-top: 14px;
-    }
-
-    .post-body-container {
+    .post-form-container {
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1.5px solid white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
         width: 100%;
-        padding-top: 15px;
-        padding-bottom: 10px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        justify-content: space-around;
-        
-        img {
-            border-radius: 100%;
-            width: 40px;
-            height: 40px;
-            margin-left: 2%;
+        height: auto;
+        background-color: white;
+        margin-top: 10px;
+    
+        h2 {
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            padding-top: 14px;
         }
-
-        
-        
-    }
-
-    .create-post-border-bottom {
-        border-top: 1px solid rgb(212, 212, 212);
-        width: 95%;
-        margin-left: 2.5%;
-        
-    }
-
-    .create-post-border-top {
-        border-top: 1px solid rgb(212, 212, 212);
-        width: 95%;
-        margin-left: 2.5%;
-        padding-bottom: 2px;
-    }
-
-    .upload-photo-container {
-        // padding-top: 10px;
-        padding-left: 10px;
-        padding-bottom: 2px;
-        
-        .upload-photo-btn {
+    
+        .post-body-container {
+            width: 100%;
+            padding-top: 15px;
+            padding-bottom: 10px;
             display: flex;
-            z-index: 1;
-            width: 125px;
-            height: 37px;
-            border-radius: 8px;
-            cursor: pointer;
-
-            input {
-                display: none;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+            
+            img {
+                border-radius: 100%;
+                width: 40px;
+                height: 40px;
+                margin-left: 2%;
             }
-
-            .photo-icon {
-                background: image-url('photo2.png');
-                background-repeat: no-repeat;
-                background-size: auto;
-                width: 35px;
-                height: 30px;
-                margin-top: 5px;
-                margin-left: 10px;
-                position: relative;
-                cursor: pointer;
+    
+            
+            
+        }
+    
+        .create-post-border-bottom {
+            border-top: 1px solid rgb(212, 212, 212);
+            width: 95%;
+            margin-left: 2.5%;
+            
+        }
+    
+        .create-post-border-top {
+            border-top: 1px solid rgb(212, 212, 212);
+            width: 95%;
+            margin-left: 2.5%;
+            padding-bottom: 2px;
+        }
+    
+        .upload-photo-container {
+            // padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 2px;
+            
+            .upload-photo-btn {
+                display: flex;
                 z-index: 1;
+                width: 125px;
+                height: 37px;
+                border-radius: 8px;
+                cursor: pointer;
+    
+                input {
+                    display: none;
+                }
+    
+                .photo-icon {
+                    background: image-url('photo2.png');
+                    background-repeat: no-repeat;
+                    background-size: auto;
+                    width: 35px;
+                    height: 30px;
+                    margin-top: 5px;
+                    margin-left: 10px;
+                    position: relative;
+                    cursor: pointer;
+                    z-index: 1;
+                }
+    
+                p {
+                    margin-left: 18px;
+                    margin-top: 13px;
+                    font-weight: bold;
+                    color: grey;
+                    
+                }
+    
+    
             }
-
-            p {
-                margin-left: 18px;
-                margin-top: 13px;
-                font-weight: bold;
-                color: grey;
-                
-            }
-
-
         }
     }
 }
+
 
 .create-post-btn-container {
     padding-top: 13px;
