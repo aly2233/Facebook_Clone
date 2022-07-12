@@ -241,7 +241,7 @@
     align-items: center;
     margin-left: 3%;
     height: 60px;
-    margin-top: 10px;
+
     
     img {
         border-radius: 100%;
@@ -250,6 +250,8 @@
     }
 
     .comment-form {
+        height: auto;
+        
         width: 100%;
             input {
             margin-left: 15px;
