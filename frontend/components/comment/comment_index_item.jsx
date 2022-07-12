@@ -110,7 +110,7 @@ class CommentIndexItem extends React.Component {
         })
     }
 
-    handleSubmit(e) {
+    handleSubmit(e) { 
         const formData = new FormData();
         formData.id = this.props.comment.id;
         formData.append('comment[body]', this.state.body);
@@ -121,34 +121,17 @@ class CommentIndexItem extends React.Component {
         })
     }
 
-    handleCancel(e) {
-        e.preventDefault();
+    handleCancel() {
+        if (this.props.comment.body !== this.state.body) {
+            this.setState({
+                body: this.props.comment.body
+            })
+        }
         this.setState({edit: false})
     }
 
 
     render() {
-        let commentDisplay;
-        this.state.edit === true ? commentDisplay = 
-            <>
-                <input className='comment-body' type="text"
-                    onChange={this.update('body')}
-                    value={this.state.body}
-                    onKeyPress={ e => {
-                        if (e.key === 'Enter') {
-                        e.preventDefault();
-                        this.handleSubmit();}
-                    }}
-                />
-            </> : commentDisplay = <>
-            <div className='comment-name'>
-                            <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
-                                {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
-                            </Link>
-                        </div>
-                        <div className='comment-body'>{this.state.body}</div>
-                        </>
-    
         let liked = false;
         this.props.likes.forEach(like => {
             if (like.liker_id === this.props.currentUser.id) {
@@ -166,19 +149,69 @@ class CommentIndexItem extends React.Component {
                 type='Comment'
             />
         }
+       
+        let commentDisplay;
+        this.state.edit === true ? commentDisplay = 
+            <>
+                <div className="comment-pic-body-edit">
+                    <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
+
+                        <textarea className='comment-body' type="text"
+                            onChange={this.update('body')}
+                            value={this.state.body}
+                            onKeyDown={ e => {
+                                if (e.key === 'Enter') {
+                                    e.preventDefault();
+                                    this.handleSubmit();
+                                } else 
+                                if (e.key === 'Escape') {
+                                    e.preventDefault();
+                                    this.handleCancel();
+                                }
+                            }}
+                        />
+                    </div>
+
+                <div className="break"></div>
+                <div className="edit-comment-cancel-note">Press Esc to cancel.</div>
+            </> : commentDisplay = 
+                <>
+                    <div className="comment-pic-name-body">
+                        <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
+                            <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
+                        </Link>
+                        <div className='comment-index-item-container'>
+                            <div className='comment-name'>
+                                <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
+                                        {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
+                                </Link>
+                            </div>
+
+                            <div className='comment-body'>{this.state.body}</div>
+                            {this.displayDropdownMenu()}
+                            {displayLikes}
+
+                            {this.state.edit === true ? <div className='cancel-edit-comment' onClick={this.handleCancel}>Cancel</div> : null}
+                        </div>
+                    </div>
+                    <div className="break"></div>
+                    <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
+                </>
+    
 
         return (
             <li>
-                <div className="comment-pic-name-body">
+                {commentDisplay}
+                {/* <div className="comment-pic-name-body">
                     <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
                         <img className='comment-author-pic' src={this.props.users[this.props.comment.commenter_id].profilePicture} />
                     </Link>
                     <div className='comment-index-item-container'>
-                        {/* <div className='comment-name'>
+                        <div className='comment-name'>
                             <Link style={{textDecoration: 'none'}} to={`/profile/${this.props.comment.commenter_id}`}>
                                 {this.props.users[this.props.comment.commenter_id].first_name} {this.props.users[this.props.comment.commenter_id].last_name}
                             </Link>
-                        </div> */}
+                        </div>
 
                         {commentDisplay}
                         {this.displayDropdownMenu()}
@@ -186,10 +219,10 @@ class CommentIndexItem extends React.Component {
 
                         {this.state.edit === true ? <div className='cancel-edit-comment' onClick={this.handleCancel}>Cancel</div> : null}
                     </div>
-                </div>
+                </div> */}
                 
-                <div className="break"></div>
-                <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div>
+                {/* <div className="break"></div>
+                <div className='like-comment-btn' onClick={this.toggleLike} id={underlineLike}>Like</div> */}
             </li>
         );
     }

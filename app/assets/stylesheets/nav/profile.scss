@@ -3,6 +3,8 @@
     src: url('klavika-bold.otf');
 }
 
+
+
 .profile-container {
     background-color: rgba(240,242,245,255);
 }
@@ -110,6 +112,7 @@
 }
 
 .profile-top-container {
+    padding-top: 55px;
 
     
         
@@ -210,7 +213,7 @@
     width: 40%;
     flex-direction: column;
     padding-left: 14px;
-    min-width: 430px;
+    min-width: 460px;
 
 }
 

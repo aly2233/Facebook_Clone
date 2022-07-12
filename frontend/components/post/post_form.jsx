@@ -82,8 +82,8 @@ class PostForm extends React.Component {
 
         return(
             <>
-                <h2>Create Post</h2>
                 <div className='post-form-container'>
+                    <h2>Create Post</h2>
                     <form className='create-post-form'>
                         <div className='post-body-container'>
                             <img className='post-form-photo' src={this.props.currentUser.profilePicture}/>

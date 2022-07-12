@@ -8,11 +8,12 @@ const mapStateToProps = (state, ownProps) => {
     const postProfileId = ownProps.match.params.userId || state.session.id
 
     return ({
-        userFriends: getUserFriends(state, postProfileId),
+        friends: state.entities.friends,
         posts: Object.values(state.entities.posts),
         currentUser: state.entities.users[state.session.id],
         users: state.entities.users,
-        postProfile: state.entities.users[postProfileId]
+        postProfile: state.entities.users[postProfileId],
+        user: state.entities.users[postProfileId]
     })
 }
 

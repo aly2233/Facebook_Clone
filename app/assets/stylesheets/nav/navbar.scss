@@ -1,5 +1,5 @@
 .nav-bar {
-    position: sticky;
+    position: fixed;
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -11,6 +11,7 @@
     .nav-bar-left {
         display: flex;
         justify-content: flex-start;
+        flex: 33%;
         margin-left: 10px;
 
         img{
@@ -29,24 +30,38 @@
     .nav-bar-center {
         display: flex;
         justify-content: center;
+        flex: 33%;
         margin-top: 3px;
         border-radius: 8px;
         width: 100px;
         height: 50px;
-        
-        img {
-            padding-top: 10px;
-            height: 40px;
-            width: 40px;
-            border-radius: 50%;
+
+
+        .home-image-container {
+            display: flex;
+            justify-content: center;
+
+            border-radius: 8px;
+            padding-bottom: 20px;
+            width: 100px;
+            height: 50px;
+            
+            img {
+                padding-top: 10px;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+            }
         }
+
     }
 
-    .nav-bar-center:hover {
+    .home-image-container:hover {
         background-color: rgba(228,230,235,0.6);
     }
 
     .nav-bar-right {
+        flex: 33%;
         display: flex;
         flex-direction: row;
         justify-content: flex-end;

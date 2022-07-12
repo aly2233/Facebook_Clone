@@ -61,9 +61,11 @@ class NavBar extends React.Component {
                     <a href="https://www.linkedin.com/in/alan-yueh-01428a146/" target="_blank" rel="noopener noreferrer"><img src={window.linkedInImage}/></a>
                 </div>
                 <div className="nav-bar-center">
-                    <Link to="/newsfeed">
-                        <img src={window.homeImage}/>
-                    </Link>
+                    <div className='home-image-container'>
+                        <Link to="/newsfeed">
+                            <img src={window.homeImage}/>
+                        </Link>
+                    </div>
                 </div>
                 <div className="nav-bar-right">
                     <div className='nav-profile-and-name'> 

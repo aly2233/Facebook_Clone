@@ -16,13 +16,27 @@ class NewsFeedPostIndex extends React.Component {
         }
     }
 
+
     render() {
+
+        let friends = Object.values(this.props.friends)
+        let users = this.props.users
+        let userFriends = [];
+        userFriends.push(this.props.currentUser);
+        
+
+        friends.forEach((friend, i) => {
+            if (friend.user_id == parseInt(this.props.user.id)) {
+                userFriends.push(users[friend.friend_id]);
+            };
+        });
+
+
         if (this.props.posts.length === 0) {
             return null;
         } else {
             let allPosts = [];
-            this.props.userFriends.push(this.props.currentUser);
-            this.props.userFriends.forEach( user => {
+            userFriends.forEach(user => {
                 this.props.posts.forEach( post => {
                     if (post.author_id === user.id) {
                         allPosts.push(post);
@@ -31,7 +45,8 @@ class NewsFeedPostIndex extends React.Component {
             });
     
             const postIndexList = allPosts.reverse().map(post => {
-                return <PostIndexUtilContainer key={post.id} post={post} />
+                
+                return <PostIndexUtilContainer key={post.id} post={post} users={users}/>
             });
 
 

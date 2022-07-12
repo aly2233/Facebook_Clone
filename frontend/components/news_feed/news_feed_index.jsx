@@ -6,13 +6,16 @@ class NewsFeedIndex extends React.Component {
     constructor(props) {
         super(props)
     }
+
     
     render() {
+        let posts = this.props.posts;
+        let users = Object.values(this.props.users);
         return (
             <div className='newsfeed-main'>
                 <div className='news-feed-post-form-container'>
                     <PostCreateContainer />
-                    <NewsFeedPostIndexContainer />
+                    {posts.length > 1 && users.length > 1 && <NewsFeedPostIndexContainer/>}
                 </div>
             </div>
         );
