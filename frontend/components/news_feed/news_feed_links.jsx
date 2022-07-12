@@ -11,13 +11,13 @@ class NewsFeedLinks extends React.Component {
             <div className='newsfeed-left'>
 
                 <div className='feed-profile-photo'>
-                    {/* <Link to={`/users/${this.props.currentUser.id}`}>
+                    <Link style={{textDecoration: 'none'}}to={`/profile/${this.props.currentUser.id}`}>
                         <img className='feed-pic' src={this.props.currentUser.profilePicture} />
-                        <div className='newsfeed-name'>{this.props.currentUser.fname} {this.props.currentUser.lname}</div>
-                    </Link> */}
+                        <div className='newsfeed-name'>{this.props.currentUser.first_name} {this.props.currentUser.last_name}</div>
+                    </Link>
                 </div>
 
-                <div className='feed-link'>
+                {/* <div className='feed-link'>
                     <div className='feed-home-button'><Link to='/newsfeed'>News Feed</Link></div>
                     <div className='feed-home-icon'></div>
                 </div>
@@ -38,7 +38,7 @@ class NewsFeedLinks extends React.Component {
                         <div className='link-name'>Facelook Repo</div>
                         <i className="fas fa-code-branch link-icon"></i>
                     </div></a>
-                </div>
+                </div> */}
 
             </div>
         );

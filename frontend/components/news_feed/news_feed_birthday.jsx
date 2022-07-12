@@ -24,7 +24,7 @@ class NewsFeedBirthday extends React.Component {
                 </div>
                 
                 <div className='credits-container'>
-                    <div className='credits'>Inspired by Facebook</div>
+                    {/* <div className='credits'>Inspired by Facebook</div> */}
                     <div className='copyright-newsfeed'>&copy; Alan Yueh 2022</div>
                 </div>
             </div>
