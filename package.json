@@ -38,13 +38,13 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^5.3.0",
     "redux": "^4.1.2",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.4.1",
     "webpack": "^5.70.0",
     "webpack-cli": "^4.9.2"
   },
   "devDependencies": {
     "file-loader": "^6.2.0",
-    "url-loader": "^4.1.1"
+    "url-loader": "^4.1.1",
+    "redux-logger": "^3.0.6"
   }
 }
