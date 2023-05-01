@@ -52,7 +52,7 @@ The primary way that Facelook users interact is utilizing posts. Facelook allows
 
 ## Demo
 
-[screen-capture (1).webm](https://user-images.githubusercontent.com/96739868/235543262-277e8855-2250-4d2c-a03c-b640ff724d17.webm)
+[Facelook Demo](https://user-images.githubusercontent.com/96739868/235543262-277e8855-2250-4d2c-a03c-b640ff724d17.webm)
 
 ## Check It Out!
 [On Heroku](https://facelook-ayueh.herokuapp.com/#/)
