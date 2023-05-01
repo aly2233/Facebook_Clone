@@ -18,6 +18,8 @@ Facelook is a dynamic and true single-page application utilizing React’s compo
 + AWS S3
 
 ## Create Posts
+
+The primary way that Facelook users interact is utilizing posts. Facelook allows for functionalities such as liking and replying to other users' posts!
 ```
   return(
             <>
@@ -47,6 +49,10 @@ Facelook is a dynamic and true single-page application utilizing React’s compo
             </>
         );
 ```
+
+## Demo
+
+[screen-capture (1).webm](https://user-images.githubusercontent.com/96739868/235543262-277e8855-2250-4d2c-a03c-b640ff724d17.webm)
 
 ## Check It Out!
 [On Heroku](https://facelook-ayueh.herokuapp.com/#/)
