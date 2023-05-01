@@ -17,6 +17,37 @@ Facelook is a dynamic and true single-page application utilizing React’s compo
 + PostgreSQL
 + AWS S3
 
+## Create Posts
+```
+  return(
+            <>
+                <div className='post-form-container'>
+                    <h2>Create Post</h2>
+                    <form className='create-post-form'>
+                        <div className='post-body-container'>
+                            <img className='post-form-photo' src={this.props.currentUser.profilePicture}/>
+                            <textarea className='post-body' onChange={this.update('body')} value={this.state.body} placeholder="What's on your mind?"></textarea>
+                        </div>
+                        <div className='create-post-border-top'/>
+                        {showPreview}
+                        <div className='upload-photo-container'>
+                            <div className='upload-photo-btn' onClick={this.clickFile('post-photo-btn')}>
+                                <div className='photo-icon' onClick={this.clickFile('post-photo-btn')}></div>
+                                <p>Photo</p>
+                                <input className='post-photo-btn' type="file" onChange={this.handleFile}/>
+                            </div>
+                        </div>
+                        <div className='create-post-border-bottom'/>
+                        <div className='create-post-btn-container'>
+
+                        {postButton}
+                        </div>
+                    </form>
+                </div>
+            </>
+        );
+```
+
 ## Check It Out!
 [On Heroku](https://facelook-ayueh.herokuapp.com/#/)
 
