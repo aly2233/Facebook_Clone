@@ -10,7 +10,7 @@ Facelook is a dynamic and true single-page application utilizing React’s compo
 ## Techologies Used
 + React
 + Redux
-+ Javscript
++ Javascript
 + Ruby on Rails
 + HTML
 + CSS
