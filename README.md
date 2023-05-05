@@ -8,8 +8,7 @@
 Facelook is a dynamic and true single-page application utilizing React’s components and Redux’s state management, allowing for creation of more predictable state and reliable DOM rendering. It utilizes Amazon AWS3 to host images to improve content security, provide easy data management, reduce page load, and improve scalability. The front-end was created using React, CSS, and HTML. The back-end utilizes Ruby on Rails, taking advantage of SQL and Active Record to reduce API querying.
 
 ## Techologies Used
-+ React
-+ Redux
++ React/Redux
 + Javascript
 + Ruby on Rails
 + HTML
