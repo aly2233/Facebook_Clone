@@ -14,7 +14,7 @@ Facelook is a dynamic and true single-page application utilizing React’s compo
 + HTML
 + CSS
 + PostgreSQL
-+ AWS S3
++ AWS
 
 ## Create Posts
 
